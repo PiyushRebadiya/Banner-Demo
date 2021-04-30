@@ -28,7 +28,7 @@ const BannerData = () => {
 
     const editHandler = (data) => {
         dispatch(updateBanner(data))
-        history.push("/update")
+        history.push("/banner")
     }
 
     const deleteHandler = (id) => {
@@ -62,9 +62,8 @@ const BannerData = () => {
 }
 
 const Table = ({ data, title, type, deleteHandler, editHandler }) => {
-    console.log('type', type);
     return (
-        <div className={classNames("col-md-12", { 'firstCol': type === 'current_plan', 'secondCol': type === 'up_comming_plan', 'thirdCol': type === 'exipiry_plan' })}>
+        <div className={classNames("col-md-12 mb-4", { 'firstCol': type === 'current_plan', 'secondCol': type === 'up_comming_plan', 'thirdCol': type === 'exipiry_plan' })}>
             <div >
                 <h1 className={classNames({ 'currantH1first': type === 'current_plan', 'currantH1second': type === 'up_comming_plan', 'currantH1third': type === 'exipiry_plan' })}>{title}</h1>
             </div>
@@ -98,7 +97,7 @@ const Table = ({ data, title, type, deleteHandler, editHandler }) => {
                                         <td>{item.bannerStartDate}</td>
                                         <td>{item.bannerLastDate}</td>
                                         <td>
-                                            <button className="btn btn-outline-warning btnEdit" onClick={() => editHandler(item)}>Edit</button>
+                                            <button className="btn btn-outline-warning btnEdit" onClick={() => editHandler(item)}>Update</button>
                                             <button className="btn btn-outline-danger btnDelete" onClick={() => deleteHandler(item.ID)}>Remove</button>
                                         </td>
                                     </tr>

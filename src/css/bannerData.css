@@ -28,14 +28,14 @@ tr:nth-child(even) {
 
 .secondDiv {
     position: relative;
-    top: 10px;
+    top: 4px;
 }
 
 .currantH1first {
     font-size: 6rem;
     position: relative;
     text-align: center;
-    top: 17px;
+    top: 10px;
     font-family: emoji;
     color: blue;
 }
@@ -44,7 +44,7 @@ tr:nth-child(even) {
     font-size: 6rem;
     position: relative;
     text-align: center;
-    top: 17px;
+    top: 10px;
     font-family: emoji;
     color: green;
 }
@@ -89,7 +89,7 @@ tr {
     font-size: 6rem;
     position: relative;
     text-align: center;
-    top: 17px;
+    top: 10px;
     font-family: emoji;
     color: red;
 }
@@ -116,5 +116,13 @@ tr {
 }
 .red{
     color:red
+}
+
+.table thead th {
+    text-align: center;
+}
+
+.table td{
+    text-align: center;
 }
 

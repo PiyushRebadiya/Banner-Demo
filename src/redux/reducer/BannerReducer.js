@@ -2,7 +2,6 @@ import { ADD_BANNER, REMOVE_BANNER, UPDATE_BANNER, UPDATE_ADD_BANNER } from "../
 
 const initialState = {
     banner: [],
-    bannerUpdate: []
 }
 
 export const BannerReducer = (state = initialState, action) => {
@@ -28,17 +27,16 @@ export const BannerReducer = (state = initialState, action) => {
         case UPDATE_BANNER:
             return {
                 ...state,
-                bannerUpdate: [
-                    ...state.bannerUpdate,
-                    action.payload,
-                ]
+                bannerUpdate: [action.payload],
             };
 
         case UPDATE_ADD_BANNER:
             const dummyBanner = state.banner
+            const dummyupdateData  = state.bannerUpdate 
             const dummyId = action.payload
-            const dummyIndex = dummyBanner.findIndex((item) => item.ID === dummyId.ID)
+            const dummyIndex = dummyBanner.findIndex((item) => item.ID === dummyupdateData[0].ID)
             dummyBanner[dummyIndex] = dummyId
+            
             return {
                 ...state,
                 bannerUpdate: []

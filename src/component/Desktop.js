@@ -8,7 +8,7 @@ import "../css/desktop.css"
 const Desktop = () => {
     const [dateFormat, setDateFormat] = useState()
     const Data = useSelector(state => state.banner)
-    const update = useSelector(state => state)
+   
 
     useEffect(() => {
         const d = new Date()
