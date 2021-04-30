@@ -1,0 +1,43 @@
+.mainDiv{
+    text-align: center;
+    background-image: url("https://www.kibrispdr.org/data/baground-minimalis-8.jpg");
+    height: 924px;
+}
+
+.imgChange{
+    height: 600px;
+    width: 650px;
+    position: relative;
+    top: 120px;
+}
+
+.firstDiv {
+    position: relative;
+    top: 89px;
+    font-size: large;
+}
+
+.h1Data{
+    font-size: 5rem;
+    font-family: ui-monospace;
+    position: relative;
+    top: 35px;
+    color: crimson;
+}
+
+.firstDivH1 {
+    font-size: 6rem;
+    font-family: fantasy;
+    color: currentcolor;
+    position: relative;
+    top: 45px;
+    color: darkblue;
+}
+
+#btnAdd {
+    font-size: larger
+}
+
+.bannerlabel {
+    color: black;
+}

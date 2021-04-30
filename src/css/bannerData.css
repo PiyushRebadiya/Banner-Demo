@@ -1,0 +1,120 @@
+.images {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.first th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #007bff;
+    color: white;
+    font-size: 3rem;
+}
+
+.second th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #28a745;
+    color: white;
+    font-size: 3rem;
+}
+
+.secondDiv {
+    position: relative;
+    top: 10px;
+}
+
+.currantH1first {
+    font-size: 6rem;
+    position: relative;
+    text-align: center;
+    top: 17px;
+    font-family: emoji;
+    color: blue;
+}
+
+.currantH1second {
+    font-size: 6rem;
+    position: relative;
+    text-align: center;
+    top: 17px;
+    font-family: emoji;
+    color: green;
+}
+
+.thCenter {
+    text-align: center;
+}
+
+.firstCol {
+    position: relative;
+    border: 2px solid blue;
+    top: 30px;
+}
+
+.secondCol {
+    position: relative;
+    border: 2px solid green;
+    top: 40px;
+}
+
+tr {
+    font-size: 2.3rem
+}
+
+.btnEdit {
+    font-size: inherit;
+}
+
+.btnDelete{
+    font-size: inherit;
+    position: relative;
+    left: 10px;
+}
+
+.thirdCol {
+    position: relative;
+    border: 2px solid red;
+    top: 50px;
+}
+
+.currantH1third {
+    font-size: 6rem;
+    position: relative;
+    text-align: center;
+    top: 17px;
+    font-family: emoji;
+    color: red;
+}
+
+.thirdDiv {
+    position: relative;
+    top: 10px;
+}
+
+.third th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ff0000b3;
+    color: white;
+    font-size: 3rem;
+}
+
+.blue{
+    color:blue
+}
+.pink{
+    color:green
+}
+.red{
+    color:red
+}
+
