@@ -1,7 +1,7 @@
 .mainDiv{
     text-align: center;
     background-image: url("https://www.kibrispdr.org/data/baground-minimalis-8.jpg");
-    height: 924px;
+    height: 970px;
 }
 
 .imgChange{
@@ -15,6 +15,7 @@
     position: relative;
     top: 89px;
     font-size: large;
+    text-align: initial;
 }
 
 .h1Data{
@@ -40,4 +41,14 @@
 
 .bannerlabel {
     color: black;
+}
+
+.imgPTag {
+    position: relative;
+    top: 131px;
+    font-size: x-large;
+}
+
+p{
+    color: red;
 }

@@ -11,6 +11,10 @@ import "../css/bannerData.css"
 const BannerData = () => {
     const [dateFormat, setDateFormat] = useState()
 
+    const [isDisabled, setIsDisabled] = useState(false) // count
+    const [isSecond, setIsSecond] = useState(5000) // count
+    console.log("isSecond", isSecond); // count
+
     const Data = useSelector(state => state.banner)
 
     let history = useHistory();
@@ -35,6 +39,29 @@ const BannerData = () => {
         dispatch(removeBanner(id))
     }
 
+// count
+    useEffect(() => {
+        if (!isDisabled && isSecond > 0) {
+            var start = setInterval(() => {
+                setIsSecond(item => item - 1000)
+            }, 1000)
+            console.log("start",start);
+        } else {
+            clearInterval(start)
+            setIsSecond(isSecond)
+        }
+        return () => {
+            clearInterval(start)
+        }
+    }, [isSecond])
+
+    useEffect(() => {
+        if (isSecond === 0) {
+            setIsDisabled(true)
+        }
+    }, [isSecond])
+// count
+
     return (
         <div className="row">
 
@@ -56,6 +83,16 @@ const BannerData = () => {
                 )
             }
 
+
+            <div className='d-flex align-items-center justify-content-center'>
+                <button
+                    className='btn btn-danger demo'
+                    disabled={isDisabled}
+                    onClick={() => setIsSecond(5000)}
+                >
+                    {isSecond}
+                </button>
+            </div>
         </div>
 
     )
