@@ -86,7 +86,7 @@ const BannerData = () => {
 
             <div className='d-flex align-items-center justify-content-center'>
                 <button
-                    className='btn btn-danger demo'
+                    className='btn btn-success demo'
                     disabled={isDisabled}
                     onClick={() => setIsSecond(5000)}
                 >

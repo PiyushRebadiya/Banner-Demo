@@ -155,8 +155,9 @@ const Banner = () => {
         }
     }
 
-    const d = new Date()
-    var latestDate = d.toISOString().slice(0, 10)
+    if (blankArr.totalBanner === 0) {
+        blankArr.totalBanner = blankArr.price * blankArr.countDay
+    }
 
     return (
         <div className="mainDiv">
@@ -204,6 +205,8 @@ const Banner = () => {
                                 type="date"
                                 onChange={(e) =>
                                     EndDateHandler(e)}
+                                disabled={!blankArr.bannerStartDate && !updateArr}
+                                min={blankArr.bannerStartDate}
                                 value={updateArr && updateArr.bannerLastDate}
                             />
                         </label>
@@ -277,9 +280,14 @@ const Banner = () => {
                         }
                     </div>
                     <div className="col-md-6">
-                        <img src={updateArr ? updateArr.bannerImgSRC : blankArr.bannerImgSRC} alt="" className="imgChange" />
                         {
-                            !blankArr.bannerImgSRC && validation && <p className="imgPTag">Required!!!</p>
+                            blankArr.bannerImgSRC && <img src={blankArr.bannerImgSRC} alt="" className="imgChange" />
+                        }
+                        {
+                            updateArr && updateArr.bannerImgSRC && <img src={updateArr.bannerImgSRC} alt="" className="imgChange" />
+                        }
+                        {
+                            !blankArr.bannerImgSRC && validation && <p className="imgPTag">Select Banner !!!</p>
                         }
                     </div>
                 </div>
