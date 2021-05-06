@@ -47,7 +47,7 @@ const Banner = () => {
             let diff = y - x;
             let result = 1000 * 3600 * 24;
             let finalDay = (diff / result) + 1
-            console.log("finalDay",finalDay);
+
             setUpdateArr({ ...updateArr, bannerStartDate: e.target.value , countDay: finalDay, totalBanner: updateArr.price * finalDay})
         } else {
             setBlankArr({ ...blankArr, bannerStartDate: e.target.value })
@@ -69,7 +69,6 @@ const Banner = () => {
     }
 
     const Option_Handler = (e) => {
-        
 
         let demo = updateArr.price * updateArr.countDay
         console.log("demo",demo);

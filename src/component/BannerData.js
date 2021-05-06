@@ -13,7 +13,7 @@ const BannerData = () => {
 
     const [isDisabled, setIsDisabled] = useState(false) // count
     const [isSecond, setIsSecond] = useState(5000) // count
-    console.log("isSecond", isSecond); // count
+    // console.log("isSecond", isSecond); // count
 
     const Data = useSelector(state => state.banner)
 
@@ -45,7 +45,7 @@ const BannerData = () => {
             var start = setInterval(() => {
                 setIsSecond(item => item - 1000)
             }, 1000)
-            console.log("start",start);
+            // console.log("start",start);
         } else {
             clearInterval(start)
             setIsSecond(isSecond)

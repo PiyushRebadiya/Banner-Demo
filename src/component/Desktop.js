@@ -17,13 +17,12 @@ const Desktop = () => {
     }, [])
 
     const bannerData = Data.filter((item) => { if (item.bannerStartDate <= dateFormat && item.bannerLastDate >= dateFormat) return item })
-    const bannerComingData = Data.filter((item) => { if (item.bannerStartDate > dateFormat && item.bannerLastDate >= dateFormat) return item })
 
     return (
         <div>
             <Carousel>
                 {
-                    bannerData.map((item) => {
+                    bannerData.length > 0 &&  bannerData.map((item) => {
                         return (
                             <Carousel.Item interval={500}>
                                 <a href={item.site} target="_blank"> <img
@@ -36,7 +35,6 @@ const Desktop = () => {
                     })
                 }
             </Carousel>
-            <button></button>
         </div>
 
     )
