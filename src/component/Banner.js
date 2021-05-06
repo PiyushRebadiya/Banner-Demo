@@ -188,7 +188,7 @@ const Banner = () => {
                         <br />
                         <label className="bannerlabel">
                             Start Date :-
-                  <input
+                     <input
                                 type="date"
                                 onChange={(e) =>
                                     StartDateHandler(e)}
@@ -201,12 +201,12 @@ const Banner = () => {
                         <br />
                         <label className="bannerlabel">
                             End Date :-
-                   <input
+                     <input
                                 type="date"
                                 onChange={(e) =>
                                     EndDateHandler(e)}
                                 disabled={!blankArr.bannerStartDate && !updateArr}
-                                min={blankArr.bannerStartDate}
+                                min={blankArr.bannerStartDate || updateArr && updateArr.bannerStartDate}
                                 value={updateArr && updateArr.bannerLastDate}
                             />
                         </label>

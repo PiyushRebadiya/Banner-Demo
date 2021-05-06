@@ -18,10 +18,10 @@ function App() {
         <div id="header">
           <div className="container">
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-4 col-sm-12">
                 <h1 id="logo"><Link to="/desktop" className="none">www.Banner.com</Link></h1>
               </div>
-              <div className="col-md-8">
+              <div className="col-md-8 col-sm-12">
                 <ul id="menu" className="float-md-right">
                   <li><Link to="/desktop">Desktop</Link></li>
                   <li><Link to="/banner">Add</Link></li>
