@@ -70,8 +70,6 @@ const Banner = () => {
 
     const Option_Handler = (e) => {
 
-        let demo = updateArr.price * updateArr.countDay
-        console.log("demo",demo);
         
         let item = e.target.value
 
