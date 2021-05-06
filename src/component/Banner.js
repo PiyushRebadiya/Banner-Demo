@@ -40,8 +40,15 @@ const Banner = () => {
     }, [])
 
     const StartDateHandler = (e) => {
+      
         if (updateArr) {
-            setUpdateArr({ ...updateArr, bannerStartDate: e.target.value })
+            let x = new Date(e.target.value).getTime();
+            let y = new Date(updateArr.bannerLastDate).getTime();
+            let diff = y - x;
+            let result = 1000 * 3600 * 24;
+            let finalDay = (diff / result) + 1
+            console.log("finalDay",finalDay);
+            setUpdateArr({ ...updateArr, bannerStartDate: e.target.value , countDay: finalDay, totalBanner: updateArr.price * finalDay})
         } else {
             setBlankArr({ ...blankArr, bannerStartDate: e.target.value })
         }
@@ -62,17 +69,22 @@ const Banner = () => {
     }
 
     const Option_Handler = (e) => {
+        
+
+        let demo = updateArr.price * updateArr.countDay
+        console.log("demo",demo);
+        
         let item = e.target.value
 
         if (updateArr) {
             if (item === "Diwali") {
-                setUpdateArr({ ...updateArr, bannerImgSRC: "https://freedesignfile.com/upload/2017/08/Happy-diwali-background-design-vectors-03.jpg", bannerValue: item, price: 500, site: "https://www.diwalifestival.org/", ID: Math.random().toString().substr(9, 4) })
+                setUpdateArr({ ...updateArr, bannerImgSRC: "https://freedesignfile.com/upload/2017/08/Happy-diwali-background-design-vectors-03.jpg", bannerValue: item, price: 500, site: "https://www.diwalifestival.org/", ID: Math.random().toString().substr(9, 4) , totalBanner: updateArr.countDay * 500})
             } else if (item === "Holi") {
-                setUpdateArr({ ...updateArr, bannerImgSRC: "https://image.freepik.com/free-vector/happy-holi-watercolor-floral-wreath-background_23-2147602204.jpg", bannerValue: item, price: 200, site: "https://brojure.com/site-india/happy-holi/", ID: Math.random().toString().substr(9, 4) })
+                setUpdateArr({ ...updateArr, bannerImgSRC: "https://image.freepik.com/free-vector/happy-holi-watercolor-floral-wreath-background_23-2147602204.jpg", bannerValue: item, price: 200, site: "https://brojure.com/site-india/happy-holi/", ID: Math.random().toString().substr(9, 4) , totalBanner: updateArr.countDay * 200})
             } else if (item === "Summer") {
-                setUpdateArr({ ...updateArr, bannerImgSRC: "https://cdn4.vectorstock.com/i/1000x1000/10/53/children-summer-vacation-kids-playing-sand-around-vector-8881053.jpg", bannerValue: item, price: 250, site: "https://www.123rf.com/stock-photo/people_on_beach.html?sti=mj3jc3xp51cd92mw84|", ID: Math.random().toString().substr(9, 4) })
+                setUpdateArr({ ...updateArr, bannerImgSRC: "https://cdn4.vectorstock.com/i/1000x1000/10/53/children-summer-vacation-kids-playing-sand-around-vector-8881053.jpg", bannerValue: item, price: 250, site: "https://www.123rf.com/stock-photo/people_on_beach.html?sti=mj3jc3xp51cd92mw84|", ID: Math.random().toString().substr(9, 4) , totalBanner: updateArr.countDay * 250})
             } else if (item === "Republic") {
-                setUpdateArr({ ...updateArr, bannerImgSRC: "https://image.shutterstock.com/z/stock-vector--th-january-happy-republic-day-of-india-in-vector-background-556926070.jpg", bannerValue: item, price: 100, site: "https://republicday.nic.in/", ID: Math.random().toString().substr(9, 4) })
+                setUpdateArr({ ...updateArr, bannerImgSRC: "https://image.shutterstock.com/z/stock-vector--th-january-happy-republic-day-of-india-in-vector-background-556926070.jpg", bannerValue: item, price: 100, site: "https://republicday.nic.in/", ID: Math.random().toString().substr(9, 4) , totalBanner: updateArr.countDay * 100})
             } else {
                 setUpdateArr({ ...updateArr, bannerImgSRC: "https://commerceiets.com/wp-content/uploads/2019/04/specialoffer.jpg", bannerValue: "", price: "", totalBanner: "" })
             }
